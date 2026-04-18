@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout da MemoriaActivity — Otimizado para Android TV (paisagem).
+    Grid 4x4 ocupa a maior parte da tela; placar aparece no topo.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#1A1A2E">
+
+    <!-- Barra superior: título e placar lado a lado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jogo da Memória"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#E0E0FF" />
+
+        <!-- Placar de pares encontrados -->
+        <TextView
+            android:id="@+id/tv_placar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pares: 0 / 8"
+            android:textSize="22sp"
+            android:textColor="#A0C4FF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!--
+        Instrução de uso para TV.
+        Lembra o usuário de usar as setas do controle.
+    -->
+    <TextView
+        android:id="@+id/tv_instrucao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use as setas para mover e OK para virar a carta"
+        android:textSize="14sp"
+        android:textColor="#7070AA"
+        android:gravity="center"
+        android:paddingBottom="10dp" />
+
+    <!--
+        GridLayout 4x4.
+        Os botões das cartas são adicionados dinamicamente pelo Java.
+        android:useDefaultMargins="false" evita espaçamentos extras.
+    -->
+    <GridLayout
+        android:id="@+id/grid_cartas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:rowCount="4"
+        android:useDefaultMargins="false" />
+
+</LinearLayout>
