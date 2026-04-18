@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Banner do app para a tela inicial da Android TV.
+    A TV exibe este banner como ícone/capa do aplicativo na grade de apps.
+
+    Idealmente seria um arquivo PNG de 320x180px.
+    Aqui usamos um shape simples como fallback.
+    Para um banner visual melhor, substitua por um arquivo banner_tv.png
+    na pasta res/drawable-xhdpi/ com dimensões 320x180px.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="#1A1A2E"
+        android:endColor="#2A4A7F"
+        android:angle="45" />
+</shape>
