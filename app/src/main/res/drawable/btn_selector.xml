@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Seletor de estado do botão para Android TV.
+
+    Define cores diferentes conforme o estado do botão:
+    - Focado (navegando com controle remoto): cor amarela/dourada de destaque
+    - Pressionado (ao confirmar com OK): cor mais escura
+    - Normal (sem foco): cor azul padrão
+
+    O destaque visual de foco é ESSENCIAL para TV, pois o usuário precisa
+    saber visualmente qual botão está selecionado no controle remoto.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Estado: FOCADO — botão selecionado pelo controle remoto -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFD700" />
+            <!-- Borda grossa para destacar ainda mais -->
+            <stroke android:width="4dp" android:color="#FFFFFF" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Estado: PRESSIONADO — botão confirmado com OK -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#CC9900" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Estado: DESABILITADO — carta já encontrada -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#2E4A2E" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Estado: NORMAL — sem foco -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#2A4A7F" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+</selector>
