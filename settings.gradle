@@ -1,0 +1,7 @@
+// settings.gradle — Define os módulos que fazem parte do projeto
+
+// Nome do projeto
+rootProject.name = "JogoMemoria"
+
+// Inclui o módulo 'app' (pasta app/)
+include ':app'
