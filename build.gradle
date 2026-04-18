@@ -1,0 +1,19 @@
+// build.gradle raiz — configura o Android Gradle Plugin
+  buildscript {
+      repositories {
+          google()
+          mavenCentral()
+      }
+      dependencies {
+          // AGP 7.4.2 — compatível com Gradle 7.5+ e Java 17
+          classpath 'com.android.tools.build:gradle:7.4.2'
+      }
+  }
+
+  allprojects {
+      repositories {
+          google()
+          mavenCentral()
+      }
+  }
+  
