@@ -11,17 +11,20 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
-      - name: Instalar Gradle 6.9.4
+      - name: Instalar Gradle 7.6.1
         run: |
-          wget -q https://services.gradle.org/distributions/gradle-6.9.4-bin.zip
-          unzip -q gradle-6.9.4-bin.zip
-          echo "$GITHUB_WORKSPACE/gradle-6.9.4/bin" >> $GITHUB_PATH
+          wget -q https://services.gradle.org/distributions/gradle-7.6.1-bin.zip
+          unzip -q gradle-7.6.1-bin.zip -d /opt/gradle
+          echo "/opt/gradle/gradle-7.6.1/bin" >> $GITHUB_PATH
+
+      - name: Gerar Gradle Wrapper
+        run: gradle wrapper --gradle-version 7.6.1
 
       - name: Compilar APK
-        run: gradle assembleDebug
+        run: ./gradlew assembleDebug
 
       - name: Disponibilizar APK para download
         uses: actions/upload-artifact@v4
