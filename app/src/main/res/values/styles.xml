@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Estilos do aplicativo.
+    Usa o tema Leanback (padrão para Android TV) sem barra de ação (NoActionBar),
+    deixando mais espaço útil na tela da TV.
+-->
+<resources>
+
+    <!--
+        Tema principal do app.
+        android.R.style.Theme_Holo_NoActionBar é compatível com API 11+
+        e não exige dependências externas. Fundo escuro, ideal para TV.
+    -->
+    <style name="AppTheme" parent="android:style/Theme.Holo.NoActionBar">
+        <!-- Cor de fundo padrão das telas -->
+        <item name="android:windowBackground">#1A1A2E</item>
+        <!-- Cor de destaque quando elemento está focado -->
+        <item name="android:colorActivatedHighlight">#FFD700</item>
+    </style>
+
+</resources>
