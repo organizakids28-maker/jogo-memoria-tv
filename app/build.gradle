@@ -1,39 +1,35 @@
-// build.gradle do módulo app
-
 apply plugin: 'com.android.application'
 
-android {
-    // Versão do SDK usada para compilar
-    compileSdkVersion 30
+  android {
+      compileSdkVersion 33
 
-    defaultConfig {
-        applicationId "com.example.jogomemoria"
+      defaultConfig {
+          applicationId "com.example.jogomemoria"
+          minSdkVersion 17
+          targetSdkVersion 33
+          versionCode 1
+          versionName "1.0"
+      }
 
-        // API 17 (Android 4.2) — mínimo para Android TV + GridLayout nativo
-        minSdkVersion 17
+      buildTypes {
+          debug {
+              debuggable true
+          }
+          release {
+              minifyEnabled false
+          }
+      }
 
-        targetSdkVersion 30
+      compileOptions {
+          sourceCompatibility JavaVersion.VERSION_1_8
+          targetCompatibility JavaVersion.VERSION_1_8
+      }
 
-        versionCode 1
-        versionName "1.0"
-    }
+      // Necessário no AGP 7.4+
+      namespace 'com.example.jogomemoria'
+  }
 
-    buildTypes {
-        debug {
-            debuggable true
-        }
-        release {
-            minifyEnabled false
-        }
-    }
-
-    // Necessário para compilar com Java 8+ no AGP 4.x
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
-
-dependencies {
-    // Sem dependências externas
-}
+  dependencies {
+      // Sem dependências externas
+  }
+  
