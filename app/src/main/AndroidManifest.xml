@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AndroidManifest.xml — Configurado para Android TV.
+
+    Inclui:
+    - Intent LEANBACK_LAUNCHER para aparecer na tela inicial da TV
+    - Declaração de que a TV é o dispositivo principal (required="true")
+    - Touchscreen como "not required" (TV usa controle remoto)
+-->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jogomemoria"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="21" />
+
+    <!-- Declara que o app suporta TV -->
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
+    <!-- TV não tem touchscreen — marcar como não obrigatório -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:banner="@drawable/banner_tv"
+        android:allowBackup="true"
+        android:theme="@style/AppTheme">
+
+        <!--
+            MainActivity: tela inicial do app.
+            LEANBACK_LAUNCHER faz o app aparecer na tela inicial da Android TV.
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- Para telefones/tablets normais -->
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Para Android TV -->
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            MemoriaActivity: tela do jogo da memória.
+        -->
+        <activity
+            android:name=".MemoriaActivity"
+            android:label="Jogo da Memória"
+            android:screenOrientation="landscape" />
+
+    </application>
+
+</manifest>
