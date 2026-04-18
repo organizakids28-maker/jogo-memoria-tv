@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arquivo de strings do aplicativo.
+    Centraliza todos os textos para facilitar tradução e manutenção.
+-->
+<resources>
+    <!-- Nome do aplicativo exibido na barra de título -->
+    <string name="app_name">Jogo da Memória</string>
+
+    <!-- Textos das Activities -->
+    <string name="btn_jogar">Jogar</string>
+    <string name="label_placar">Pares encontrados: 0 / 8</string>
+    <string name="carta_fechada">?</string>
+
+    <!-- Mensagens de vitória -->
+    <string name="vitoria_titulo">Parabéns!</string>
+    <string name="vitoria_mensagem">Você venceu!\nTodos os pares foram encontrados.</string>
+    <string name="btn_jogar_novamente">Jogar Novamente</string>
+    <string name="btn_sair">Sair</string>
+</resources>
