@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout da MainActivity — Otimizado para Android TV.
+    Orientação paisagem, botão grande e com foco visível para controle remoto.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="40dp"
+    android:background="#1A1A2E">
+
+    <!-- Título do aplicativo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogo da Memória"
+        android:textSize="42sp"
+        android:textColor="#E0E0FF"
+        android:textStyle="bold"
+        android:layout_marginBottom="60dp" />
+
+    <!-- Subtítulo com instruções para TV -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use o controle remoto para navegar"
+        android:textSize="20sp"
+        android:textColor="#A0A0CC"
+        android:layout_marginBottom="48dp" />
+
+    <!--
+        Botão grande de jogar.
+        focusable e focusableInTouchMode garantem que o controle remoto consiga
+        selecionar o botão ao navegar com as setas direcionais.
+        background usa um seletor XML para mostrar destaque quando focado.
+    -->
+    <Button
+        android:id="@+id/btn_jogar"
+        android:layout_width="360dp"
+        android:layout_height="90dp"
+        android:text="JOGAR"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/btn_selector"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:nextFocusDown="@+id/btn_jogar"
+        android:nextFocusUp="@+id/btn_jogar" />
+
+</LinearLayout>
