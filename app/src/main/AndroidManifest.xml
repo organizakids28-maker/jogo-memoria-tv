@@ -9,13 +9,8 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jogomemoria"
     android:versionCode="1"
     android:versionName="1.0">
-
-    <uses-sdk
-        android:minSdkVersion="17"
-        android:targetSdkVersion="21" />
 
     <!-- Declara que o app suporta TV -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -43,22 +38,19 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!-- Para telefones/tablets normais -->
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!-- Para Android TV -->
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--
-            MemoriaActivity: tela do jogo da memória.
-        -->
         <activity
             android:name=".MemoriaActivity"
             android:label="Jogo da Memória"
+            android:exported="false"
             android:screenOrientation="landscape" />
 
     </application>
